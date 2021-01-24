@@ -14,9 +14,10 @@ while True:
         if event.type == pg.QUIT:
             pg.quit()
             exit()
-    while num != 0:    
-        pg.draw.ellipse(app, (250, 250, 250),(0, y - y//3, H, first_step + tap), 1)
-        pg.draw.ellipse(app, (250, 250, 250),(x - x//3, 0, first_step + tap, H), 1)
+    while num != 0:
+        first_step += tap
+        pg.draw.ellipse(app, (250, 250, 250),(0, y - y//3, H, first_step), 1)
+        pg.draw.ellipse(app, (250, 250, 250),(x - x//3, 0, first_step, H), 1)
         num -= 1
 
     pg.display.update()
